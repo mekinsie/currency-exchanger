@@ -6,6 +6,15 @@ import DollarConversion from './services/conversion-service.js';
 import convertCurrency from './js/convert-currency.js';
 import {checkCurrency} from './js/check-currency';
 
+function checkAllErrors(conversionResponse) {
+  if(conversionResponse["error-type"]){
+    $("#new-currency").append(`${conversionResponse.result} ${conversionResponse["error-type"]}<br>`);
+    return conversionResponse;
+  } else {
+    return conversionResponse;
+  }
+}
+
 $(document).ready(function() {
   $("#currency-form").submit(async function(event){
     event.preventDefault();
@@ -20,18 +29,19 @@ $(document).ready(function() {
     //make the call
     let conversionResponse = await DollarConversion.getConversion(fromCurrency);
     console.log(conversionResponse);
-    
-    //check to see if currencies exist in database
+
+    checkAllErrors(conversionResponse);
+
     const rateResult = checkCurrency(conversionResponse, toCurrency, fromCurrency);
     console.log(rateResult);
 
-
     let convertedAmount = convertCurrency(rateResult, inputAmount, toCurrency);
 
+    
     if (inputAmount === ""){
-      $("#new-currency").append("Please input an amount")
+      $("#new-currency").append("Please input an amount");
     } else {
-    $("#new-currency").append(`${inputAmount} ${fromCurrency} = ${convertedAmount}`);
+      $("#new-currency").append(`${inputAmount} ${fromCurrency} = ${convertedAmount}`);
     }
-  });
+  }); 
 });
