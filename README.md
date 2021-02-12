@@ -1,5 +1,5 @@
 # Currency Exchanger
-Input an amount and choose a currency for it to be converted. 
+Input an amount (in U.S. dollars) and choose a currency for it to be converted to. 
 
 #### By _**Mekinsie Callahan**_
 
@@ -20,12 +20,11 @@ View directly:
 * You can view this directly on my <a href="https://mekinsie.github.io/currency-exchanger" target="_blank">github pages</a>.
 
 
-
-Note: You need to have git and npm already installed to setup and install.
+Note: You need to have git and npm already installed to setup and install this project.
 
 **Download the repo:**
 1. Go to https://github.com/mekinsie/currency-exchanger
-2. Navigate to and click the green <img src="code.PNG" alt="code" height="20"> button on middle upper right part of webpage.
+2. Navigate to and click the green  <img src="assets/images/code-button.PNG" alt="code" height="20"> button on middle upper right part of webpage.
 3. Click on "Download ZIP"
 4. Navigate to the downloaded zip and open it.
 5. Open the folder inside the zip.
@@ -33,7 +32,7 @@ Note: You need to have git and npm already installed to setup and install.
 
 Clone the repo:
 1. Go to https://github.com/mekinsie/currency-exchanger
-2. Navigate to and click the green ![green code button](assets/images/green_button.png)<img src="code.PNG" alt="code" height="20"> button on middle upper right part of webpage.
+2. Navigate to and click the green <img src="assets/images/code-button.PNG" alt="code" height="20"> button on middle upper right part of webpage.
 3. Copy the HTTPs address to your clipboard.
 4. Open terminal or bash and navigate to the directory you wish to download the repo to.
 5. Once you have chosen your desired directory, open your terminal, type "git clone [paste link]" and press enter:
