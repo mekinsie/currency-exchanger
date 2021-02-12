@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import DollarConversion from './services/conversion-service.js';
 import convertCurrency from './js/convert-currency.js'
+import invalidFromCurrency from './js/invalid-currency'
 
 $(document).ready(function() {
   $("#currency-form").submit(async function(event){
@@ -16,10 +17,13 @@ $(document).ready(function() {
     console.log(toCurrency);
     console.log(inputAmount);
     let conversionResponse = await DollarConversion.getConversion(fromCurrency);
+    console.log(conversionResponse);
     
-    let conversionRate = conversionResponse.conversion_rates[toCurrency]
-    console.log(conversionRate);
-    let convertedAmount = convertCurrency(conversionRate, inputAmount)
+    const rateResult = invalidFromCurrency(conversionResponse, toCurrency);
+    console.log(rateResult);
+
+    let convertedAmount = convertCurrency(rateResult, inputAmount)
+
     $("#new-currency").append(`${inputAmount} ${fromCurrency} = ${convertedAmount} ${toCurrency}`);
   });
 });
