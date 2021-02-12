@@ -6,6 +6,16 @@ import DollarConversion from './services/conversion-service.js';
 import convertCurrency from './js/convert-currency.js';
 import {checkCurrency} from './js/check-currency';
 
+//Checks to see if a number was inputted. If not, displays message to input an amount.
+function emptyInput(inputAmount, fromCurrency, convertedAmount){
+  if (inputAmount === ""){
+    $("#new-currency").append("Please input an amount");
+  } else {
+    $("#new-currency").append(`${inputAmount} ${fromCurrency} = ${convertedAmount}`);
+  }
+} 
+
+//Looks for any errors with 200 ok status and displays them in HTML.
 function checkAllErrors(conversionResponse) {
   if(conversionResponse["error-type"]){
     $("#new-currency").append(`${conversionResponse.result} ${conversionResponse["error-type"]}<br>`);
@@ -22,26 +32,15 @@ $(document).ready(function() {
     let inputAmount = $("input#input-amount").val();
     let fromCurrency = $("#from-currency").val();
     let toCurrency = $("#to-currency").val();
-    console.log(fromCurrency);
-    console.log(toCurrency);
-    console.log(inputAmount);
-  
-    //make the call
+
     let conversionResponse = await DollarConversion.getConversion(fromCurrency);
     console.log(conversionResponse);
-
-    checkAllErrors(conversionResponse);
-
-    const rateResult = checkCurrency(conversionResponse, toCurrency, fromCurrency);
-    console.log(rateResult);
-
-    let convertedAmount = convertCurrency(rateResult, inputAmount, toCurrency);
-
     
-    if (inputAmount === ""){
-      $("#new-currency").append("Please input an amount");
-    } else {
-      $("#new-currency").append(`${inputAmount} ${fromCurrency} = ${convertedAmount}`);
-    }
+    checkAllErrors(conversionResponse);
+    
+    const rateResult = checkCurrency(conversionResponse, toCurrency, fromCurrency);    
+    let convertedAmount = convertCurrency(rateResult, inputAmount, toCurrency);
+    emptyInput(inputAmount, fromCurrency, convertedAmount);
+    
   }); 
 });
