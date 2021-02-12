@@ -4,6 +4,8 @@ export default class DollarConversion {
       const convertResponse = await fetch(`https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/latest/${fromCurrency}`);
       if (!convertResponse.ok) {
         throw Error(convertResponse.statusText);
+      } else if ("error-type" in convertResponse){
+      return convertResponse["error-type"]
       } else {
         return convertResponse.json();
       }
