@@ -1,5 +1,5 @@
 # Currency Exchanger
-Input an amount (in U.S. dollars) and choose a currency for it to be converted to. 
+Input an amount and choose a currency for it to be converted to. 
 
 #### By _**Mekinsie Callahan**_
 
@@ -12,7 +12,7 @@ Input an amount (in U.S. dollars) and choose a currency for it to be converted t
 * _jQuery_
 
 ## Description
-This application will allow you to convert U.S. dollars to any currency. The purpose of this project is to practice using API keys. 
+This application will allow you to convert one currency to any other currency. The purpose of this project is to practice using API keys. 
 
 ## Setup/Installation Requirements
 
