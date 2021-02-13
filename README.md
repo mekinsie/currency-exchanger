@@ -15,11 +15,6 @@ Input an amount and choose a currency for it to be converted to.
 This application will allow you to convert one currency to any other currency. The purpose of this project is to practice using API keys. 
 
 ## Setup/Installation Requirements
-
-View directly:
-* You can view this directly on my <a href="https://mekinsie.github.io/currency-exchanger" target="_blank">github pages</a>.
-
-
 Note: You need to have git and npm already installed to setup and install this project.
 
 **Download the repo:**
