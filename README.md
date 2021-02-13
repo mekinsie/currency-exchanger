@@ -10,6 +10,8 @@ Input an amount and choose a currency for it to be converted to.
 * _Bootstrap_
 * _JavaScript_
 * _jQuery_
+* _Node Package Manager_
+* _Webpack
 
 ## Description
 This application will allow you to convert one currency to any other currency. The purpose of this project is to practice using API keys. 
