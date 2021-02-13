@@ -58,7 +58,7 @@ $ touch .env
 2. Enter your email address and click "Get Free Key!"
 3. Continue to create an account using your email, first name, and a new password. Agree to the terms of use and click "Get Started!"
 4. You will be automatically navigated to the dashboard where you can copy your API key. You can also see your remaining API calls for the month here. 
-5. Copy the API key to your clipboard and paste it in the .env file that you created in this format: API_KEY=[paste API key here without brackets]
+5. Copy the API key to your clipboard and paste it in the .env file that you created in this format: API_KEY=[paste API key here without brackets]. Make sure to keep this API key secure just like you would a password.
 6. Type "npm run start" into your terminal while still in the root folder. This will build a dist folder with a bundled js file and index.html and a live server will automatically open in your default browser.
 ``` bash
 $ npm run start
