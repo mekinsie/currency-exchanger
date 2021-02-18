@@ -6,6 +6,6 @@ export default function checkCurrency(conversionResponse, toCurrency,fromCurrenc
     return (`${toCurrency} is not a currency in our database.`);
   } else {
     let conversionRate = conversionResponse.conversion_rates[toCurrency];
-    return (`${conversionRate} ${toCurrency}`);
+    return (`${conversionRate}`);
   }
 }

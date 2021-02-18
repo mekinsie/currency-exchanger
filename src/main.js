@@ -33,7 +33,6 @@ $(document).ready(function () {
     let inputAmount = $("input#input-amount").val();
     let fromCurrency = $("#from-currency").val();
     let toCurrency = $("#to-currency").val();
-
     try {
       let conversionResponse = await DollarConversion.getConversion(fromCurrency);
       console.log(conversionResponse);
