@@ -3,8 +3,8 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import DollarConversion from './services/conversion-service.js';
-import convertCurrency from './js/convert-currency.js';
-import checkCurrency from './js/check-currency';
+import {convertCurrency} from './js/currency-functions.js';
+import {checkCurrency} from './js/currency-functions.js';
 
 //Checks to see if a number was inputted. Otherwise displays conversion in HTML.
 function emptyInput(inputAmount, fromCurrency, convertedAmount) {
