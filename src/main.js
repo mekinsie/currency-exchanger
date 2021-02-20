@@ -35,7 +35,6 @@ $(document).ready(function () {
     let toCurrency = $("#to-currency").val();
     try {
       let conversionResponse = await DollarConversion.getConversion(fromCurrency);
-      console.log(conversionResponse);
       if (conversionResponse === Error) {
         throw Error();
       } else {
